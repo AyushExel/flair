@@ -251,6 +251,60 @@ class UD_ENGLISH(UniversalDependenciesCorpus):
 
         super(UD_ENGLISH, self).__init__(data_folder, in_memory=in_memory, split_multiwords=split_multiwords)
 
+        
+class UD_ANCIENT_GREEK(UniversalDependenciesCorpus):
+    def __init__(self, base_path: Union[str, Path] = None, in_memory: bool = True, split_multiwords: bool = True):
+
+        if type(base_path) == str:
+            base_path: Path = Path(base_path)
+
+        # this dataset name
+        dataset_name = self.__class__.__name__.lower()
+
+        # default dataset folder is the cache root
+        if not base_path:
+            base_path = Path(flair.cache_root) / "datasets"
+        data_folder = base_path / dataset_name
+
+        # download data if necessary
+        web_path = "https://raw.githubusercontent.com/UniversalDependencies/UD_Ancient_Greek-PROIEL/master"
+        cached_path(f"{web_path}/grc_proiel-ud-dev.conllu", Path("datasets") / dataset_name)
+        cached_path(
+            f"{web_path}/grc_proiel-ud-test.conllu", Path("datasets") / dataset_name
+        )
+        cached_path(
+            f"{web_path}/grc_proiel-ud-train.conllu", Path("datasets") / dataset_name
+        )
+
+        super(UD_ANCIENT_GREEK, self).__init__(data_folder, in_memory=in_memory, split_multiwords=split_multiwords)
+
+
+class UD_KAZAKH(UniversalDependenciesCorpus):
+    def __init__(self, base_path: Union[str, Path] = None, in_memory: bool = True, split_multiwords: bool = True):
+
+        if type(base_path) == str:
+            base_path: Path = Path(base_path)
+
+        # this dataset name
+        dataset_name = self.__class__.__name__.lower()
+
+        # default dataset folder is the cache root
+        if not base_path:
+            base_path = Path(flair.cache_root) / "datasets"
+        data_folder = base_path / dataset_name
+
+        # download data if necessary
+        web_path = "https://raw.githubusercontent.com/UniversalDependencies/UD_Kazakh-KTB/master"
+        cached_path(
+            f"{web_path}/kk_ktb-ud-test.conllu", Path("datasets") / dataset_name
+        )
+        cached_path(
+            f"{web_path}/kk_ktb-ud-train.conllu", Path("datasets") / dataset_name
+        )
+
+        super(UD_KAZAKH, self).__init__(data_folder, in_memory=in_memory, split_multiwords=split_multiwords)
+
+        
 class UD_OLD_CHURCH_SLAVONIC(UniversalDependenciesCorpus):
     def __init__(self, base_path: Union[str, Path] = None, in_memory: bool = True, split_multiwords: bool = True):
 
@@ -511,6 +565,34 @@ class UD_ITALIAN(UniversalDependenciesCorpus):
             f"{ud_path}/it_isdt-ud-train.conllu", Path("datasets") / dataset_name
         )
         super(UD_ITALIAN, self).__init__(data_folder, in_memory=in_memory, split_multiwords=split_multiwords)
+
+
+class UD_LATIN(UniversalDependenciesCorpus):
+    def __init__(self, base_path: Union[str, Path] = None, in_memory: bool = True, split_multiwords: bool = True):
+
+        if type(base_path) == str:
+            base_path: Path = Path(base_path)
+
+        # this dataset name
+        dataset_name = self.__class__.__name__.lower()
+
+        # default dataset folder is the cache root
+        if not base_path:
+            base_path = Path(flair.cache_root) / "datasets"
+        data_folder = base_path / dataset_name
+
+        # download data if necessary
+        web_path = "https://raw.githubusercontent.com/UniversalDependencies/UD_Latin-LLCT/master/"
+        cached_path(f"{web_path}/la_llct-ud-dev.conllu", Path("datasets") / dataset_name)
+        cached_path(
+            f"{web_path}/la_llct-ud-test.conllu", Path("datasets") / dataset_name
+        )
+        cached_path(
+            f"{web_path}/la_llct-ud-train.conllu", Path("datasets") / dataset_name
+        )
+
+        super(UD_LATIN, self).__init__(data_folder, in_memory=in_memory, split_multiwords=split_multiwords)
+
 
 
 class UD_SPANISH(UniversalDependenciesCorpus):
@@ -1588,3 +1670,55 @@ class UD_COPTIC(UniversalDependenciesCorpus):
         )
 
         super(UD_COPTIC, self).__init__(data_folder, in_memory=in_memory, split_multiwords=split_multiwords)
+
+class UD_IRISH(UniversalDependenciesCorpus):
+    def __init__(self, base_path: Union[str, Path] = None, in_memory: bool = True, split_multiwords: bool = True):
+
+        if type(base_path) == str:
+            base_path: Path = Path(base_path)
+
+        # this dataset name
+        dataset_name = self.__class__.__name__.lower()
+
+        # default dataset folder is the cache root
+        if not base_path:
+            base_path = Path(flair.cache_root) / "datasets"
+        data_folder = base_path / dataset_name
+
+        # download data if necessary
+        web_path = "https://raw.githubusercontent.com/UniversalDependencies/UD_Irish-IDT/master"
+        cached_path(f"{web_path}/ga_idt-ud-dev.conllu", Path("datasets") / dataset_name)
+        cached_path(
+            f"{web_path}/ga_idt-ud-test.conllu", Path("datasets") / dataset_name
+        )
+        cached_path(
+            f"{web_path}/ga_idt-ud-train.conllu", Path("datasets") / dataset_name
+        )
+
+        super(UD_IRISH, self).__init__(data_folder, in_memory=in_memory, split_multiwords=split_multiwords)
+
+class UD_LATVIAN(UniversalDependenciesCorpus):
+    def __init__(self, base_path: Union[str, Path] = None, in_memory: bool = True, split_multiwords: bool = True):
+
+        if type(base_path) == str:
+            base_path: Path = Path(base_path)
+
+        # this dataset name
+        dataset_name = self.__class__.__name__.lower()
+
+        # default dataset folder is the cache root
+        if not base_path:
+            base_path = Path(flair.cache_root) / "datasets"
+        data_folder = base_path / dataset_name
+
+        # download data if necessary
+        web_path = "https://raw.githubusercontent.com/UniversalDependencies/UD_Latvian-LVTB/master"
+        cached_path(f"{web_path}/lv_lvtb-ud-dev.conllu", Path("datasets") / dataset_name)
+        cached_path(
+            f"{web_path}/lv_lvtb-ud-test.conllu", Path("datasets") / dataset_name
+        )
+        cached_path(
+            f"{web_path}/lv_lvtb-ud-train.conllu", Path("datasets") / dataset_name
+        )
+
+        super(UD_LATVIAN, self).__init__(data_folder, in_memory=in_memory, split_multiwords=split_multiwords)
